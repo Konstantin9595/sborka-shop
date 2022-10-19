@@ -1,0 +1,18 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    min-width: 768px;
+    margin: 0 auto;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.error-page {
+    text-align: center;
+}
