@@ -1,6 +1,13 @@
+// common
 @import-normalize;
 @import 'global';
 @import '_layout';
 @import '_fonts';
 @import '_variables';
+
+//fonts
+// @import '@fortawesome/fontawesome-free';
+
+//components
 @import 'components/header';
+@import 'components/menu';
