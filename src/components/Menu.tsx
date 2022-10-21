@@ -1,6 +1,6 @@
 
 import {MenuItem, MenuItems} from '../types'
-import {FC, useState, useRef, useLayoutEffect, useMemo, useEffect} from 'react'
+import {FC, useState, useEffect} from 'react'
 import { Link } from "react-router-dom"
 import { ReactComponent as BurgerIcon} from '../assets/images/Burger.svg'
 import { ReactComponent as CloseIcon} from '../assets/images/ExitBold.svg'

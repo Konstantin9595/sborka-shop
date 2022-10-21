@@ -11,6 +11,8 @@ import Travel from './pages/Travel'
 import Beauty from './pages/Beauty'
 import Sale from './pages/Sale'
 import Checkout from './pages/Checkout'
+import {store} from './store'
+import { Provider } from "react-redux"
 
 const router = createBrowserRouter([
   {
@@ -58,5 +60,7 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <RouterProvider router={router} />
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>
 );
