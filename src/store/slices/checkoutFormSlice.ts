@@ -1,9 +1,17 @@
-import { createAsyncThunk, createEntityAdapter, createSlice, PayloadAction} from "@reduxjs/toolkit"
-import { ValidFormStateBySteps, CheckoutSteps, AccountFormStep, BillingFormStep, ShippingFormStep } from "../../types"
-import { AppDispatch } from '../index'
+import { createSlice } from "@reduxjs/toolkit"
+// import { createAsyncThunk, createEntityAdapter, createSelector, createSlice, PayloadAction} from "@reduxjs/toolkit"
 
-const initialState: ValidFormStateBySteps = {
-    checkoutFormCurrentStep: CheckoutSteps.ACCOUNT,
+import { 
+    CheckoutFormState, 
+    AccountFormStep, 
+    BillingFormStep, 
+    ShippingFormStep,
+    CheckoutStepStatus
+} from "../../types"
+
+
+const initialState: CheckoutFormState = {
+    checkoutFormCurrentStep: CheckoutStepStatus.ACCOUNT,
     checkoutFormAccountStep: { firstName: '', lastName: '' },
     checkoutFormBillingStep: { cardName: '', cardNumber: [], expireDate: '', cvvCode: 0 },
     checkoutFormShippingStep: { address: '', city: '', zipCode: '' }
@@ -13,16 +21,16 @@ const checkoutFormSlice = createSlice({
     name: 'checkoutForm',
     initialState: initialState,
     reducers: {
-        switchCurrentStep: (state: ValidFormStateBySteps, action: { payload: CheckoutSteps.ACCOUNT }) => {
+        switchCurrentStep: (state: CheckoutFormState, action: { payload: CheckoutStepStatus }) => {
             state.checkoutFormCurrentStep = action.payload
         },
-        fillAccoutFormStep: (state: ValidFormStateBySteps, action: { payload: AccountFormStep }) => {
+        fillAccoutFormStep: (state: CheckoutFormState, action: { payload: AccountFormStep }) => {
             state.checkoutFormAccountStep = action.payload
         },
-        fillBillingFormStep: (state: ValidFormStateBySteps, action: { payload: BillingFormStep }) => {
+        fillBillingFormStep: (state: CheckoutFormState, action: { payload: BillingFormStep }) => {
             state.checkoutFormBillingStep = action.payload
         },
-        fillShippingFormStep: (state: ValidFormStateBySteps, action: { payload: ShippingFormStep }) => {
+        fillShippingFormStep: (state: CheckoutFormState, action: { payload: ShippingFormStep }) => {
             state.checkoutFormShippingStep = action.payload
         }
     }

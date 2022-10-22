@@ -1,42 +1,41 @@
-export interface MenuItem {
+export type MenuItem = {
     id: number,
     label: string,
     href: string,
 }
 
-export interface MenuItems {
+export type MenuItems = {
     menuItems: MenuItem[]
 }
 
-export interface AccountFormStep {
+export type AccountFormStep = {
     firstName: string
     lastName: string
 }
 
-export interface ShippingFormStep {
+export type ShippingFormStep = {
     address: string
     city: string
     zipCode: string
 }
 
-export interface BillingFormStep {
+export type BillingFormStep = {
     cardName: string
     cardNumber: number[]
     expireDate: Date | string
     cvvCode: number
 }
 
-export enum CheckoutSteps {
+export enum CheckoutStepStatus {
     ACCOUNT = 'account',
     SHIPPING = 'shipping',
     BILLING = 'billing',
     REVIEW = 'review'
 }
 
-
-export interface ValidFormStateBySteps {
-    checkoutFormCurrentStep: CheckoutSteps
-    checkoutFormAccountStep: AccountFormStep,
-    checkoutFormShippingStep: ShippingFormStep,
+export type CheckoutFormState = {
+    checkoutFormCurrentStep: CheckoutStepStatus.ACCOUNT | CheckoutStepStatus.BILLING | CheckoutStepStatus.REVIEW | CheckoutStepStatus.SHIPPING
+    checkoutFormAccountStep: AccountFormStep
+    checkoutFormShippingStep: ShippingFormStep
     checkoutFormBillingStep: BillingFormStep
 }

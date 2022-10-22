@@ -1,9 +1,9 @@
 import { FC } from "react"
-import {CheckoutSteps} from '../../types'
+//import {CheckoutStep} from '../../types'
 
-const CheckoutFormStepsLine:FC<{step: CheckoutSteps}> = ({step}) => {
+const CheckoutFormStepsLine:FC = () => {
     return <div className="checkout-form__steps">
-            Curren Step: {step}
+            Step Line
     </div>
 }
 
