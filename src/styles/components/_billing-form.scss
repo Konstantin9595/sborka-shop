@@ -1,0 +1,153 @@
+@import '../variables';
+
+
+.checkout-step {
+    max-width: 548px;
+    //margin: 0 auto;
+    &__title {
+        margin-top: 60px;
+    }
+    &__variant {
+        margin-top: 42px;
+    }
+    &__title,
+    &__variant {
+        margin-left: 30px;
+        text-align: left;
+        max-width: 350px;
+        justify-content: space-between;
+        display: flex;
+        .variant-label {
+            cursor: pointer;
+            .card-variant__input {
+                margin-right: 9px;
+            }
+        }
+
+        .variant-label {
+            &__input {
+                width: 18px;
+                height: 18px;
+                vertical-align: top;
+                margin-right: 1em;
+            }
+        }
+    }
+
+    .checkout-form__billing {
+        position: relative;
+        border: 1px solid $gray;
+        box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.19);
+        border-radius: 5px;
+        padding: 0 30px;
+        display: flex;
+        flex-direction: row;
+        max-width: 550px;
+        align-items: center;
+        margin-top: 40px;
+        flex-wrap: wrap;
+        .item-section {
+            flex-wrap: wrap;
+            width: 100%;
+            text-align: left;
+            margin-top: 25px;
+            overflow: hidden;
+            .item-label {
+                color: #555770;
+                font-weight: 500;
+            }
+            .billing-form__items {
+                .billing-form__item {
+                    flex-grow: 1;
+                    margin: 7px 0px 7px 0px;
+                }
+                display: flex;
+                flex-direction: row;
+                .billing-form__input {
+                    all: unset;
+                    padding: 12px;
+                    background: $background-input;
+                    color: $color-input;
+                    border-radius: 3px;
+                    display: inline-block;
+                    width: 100%;
+                }
+            }
+        }
+    
+        .middle-section, .bottom-section {
+            .billing-form__items {
+                .billing-form__item  {
+                    overflow: hidden;
+                    max-width: 100px;
+                }
+    
+            }
+        }
+    
+        .middle-section {
+            .billing-form__items {
+                flex-wrap: wrap;
+                justify-content: space-between;
+                .billing-form__input {
+                    width: 100%;
+                }
+            }
+        }
+    
+        .bottom-section {
+            display: flex;
+            margin-bottom: 47px;
+            max-width: 230px;
+            justify-content: space-between;
+    
+            .billing-form__items {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    
+        .tooltip {
+            &::after {
+                content: "?";
+                background: #DBDBDB;
+                display: inline-block;
+                text-align: center;
+                border-radius: 50px;
+                margin: 0 5px;
+                padding: 0px 4px;
+                cursor: pointer;
+            }
+        
+            &::before {
+                content: "Three numbers on the back side";
+                background: $background-input;
+                color: $color-input;
+                display: inline-block;
+                text-align: center;
+                border-radius: 5px;
+                position: absolute;
+                max-width: 180px;
+                padding: 10px;
+                bottom: 33%;
+                left: 45%;
+                display: none;
+            }
+        
+            &:hover {
+                &::before {
+                    display: block;
+                }
+            }
+        }
+
+    }
+
+}
+
+
+
+
+// @media screen and (min-width: $tablet-width) {
+
+// }

@@ -1,0 +1,136 @@
+@import '../variables';
+@import '_billing-form';
+
+.checkout-form {
+    .checkout-form__steps {
+        text-transform: capitalize;
+        display: flex;
+        justify-content: space-around;
+        margin: 0 auto;
+        padding: 0 10px;
+        .checkout-form__step {
+            position: relative;
+            flex-grow: 1;
+            border-top: 1px solid $checkout-step-color;
+            padding-top: 10px;
+
+            &:last-child {
+                border-top: none;
+            }
+
+            .step-name {
+                margin-top: 9px;
+                margin-left: -10px;
+                display: inline-block;
+            }
+
+            .step-number {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 18px;
+                height: 18px;
+                font-size: 10px;
+                position: absolute;
+                text-align: center;
+                border-radius: 50px;
+                cursor: pointer;
+                top: -35%;
+                left: 0;
+                border: 1px solid $checkout-step-color;
+                color: $checkout-step-color;
+                background: $white;
+            }
+
+        }
+
+        .checkout-form__step.complited-step {
+            border-top: 1px solid $blue;
+            &:last-child {
+                border-top: none;
+            }
+            .step-number {
+                background: $blue;
+                color: $white;
+            }
+        }
+
+        .checkout-form__step.active-step {
+            .step-number {
+                border: 1px solid $blue;
+                color: $black;
+            }
+        }
+    }
+
+
+    &__condition {
+        margin-top: 41px;
+        color: #8C8C8C;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin-left: 30px;
+        .codition-item {
+            margin-bottom: 14px;
+            position: relative;
+            cursor: pointer;
+            &:has(input:checked) {
+                &::after {
+                    content: "";
+                    display: inline-block;
+                    width: 8px;
+                    height: 8px;
+                    background: $blue;
+                    position: absolute;
+                    left: -25px;
+                    top: 5px;
+                }
+            }
+
+            &::before {
+                content: "";
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                position: absolute;
+                left: -30px;
+                border: 1px solid $gray;
+                margin: 0;
+            }
+
+            input {
+                display: none;
+            }
+        }
+
+        span {
+            color: $black;
+        }
+    }
+    .checkout-switcher {
+        width: 82%;
+        margin-top: 41px;
+        display: flex;
+        justify-content: space-between;
+
+        &__button {
+            all: unset;
+            padding: 15px 30px;
+            cursor: pointer;
+            border: 1px solid $gray;
+            border-radius: 3px;
+        }
+
+        .next {
+            border: none;
+            color: $white;
+            background: $blue;
+        }
+    }
+
+}
+
+// @media screen and (min-width: $tablet-width) {
+
+// }

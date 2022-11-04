@@ -13,13 +13,43 @@
 .content {
     display: flex;
     justify-content: space-between;
+    padding: 0 30px;
+    position: relative;
+    .content-main {
+        width: 100%;
+    }
+
+    .content-cart {
+        display: none;
+    }
 }
 
 .error-page {
     text-align: center;
 }
 
-.content-main {
-    text-align: center;
-    width: 100%;
+// @media screen and (min-width: $tablet-width) {
+//     .content {
+//         .content-main {
+
+//         }
+
+//         .content-cart {
+//             max-width: 410px;
+//             display: block;
+//         }
+//     }
+// }
+
+@media screen and (min-width: $desktop-width) {
+    .content {
+        .content-main {
+            // width: 65%;
+        }
+
+        .content-cart {
+            width: 35%;
+            display: block;
+        }
+    }
 }

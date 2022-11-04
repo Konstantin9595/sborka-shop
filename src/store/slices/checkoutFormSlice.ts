@@ -11,7 +11,7 @@ import {
 
 
 const initialState: CheckoutFormState = {
-    checkoutFormCurrentStep: CheckoutStepStatus.ACCOUNT,
+    checkoutFormCurrentStep: {id: 2, name: CheckoutStepStatus.BILLING},
     checkoutFormAccountStep: { firstName: '', lastName: '' },
     checkoutFormBillingStep: { cardName: '', cardNumber: [], expireDate: '', cvvCode: 0 },
     checkoutFormShippingStep: { address: '', city: '', zipCode: '' }
@@ -21,7 +21,7 @@ const checkoutFormSlice = createSlice({
     name: 'checkoutForm',
     initialState: initialState,
     reducers: {
-        switchCurrentStep: (state: CheckoutFormState, action: { payload: CheckoutStepStatus }) => {
+        switchCurrentStep: (state: CheckoutFormState, action: { payload: {id: number, name: CheckoutStepStatus} }) => {
             state.checkoutFormCurrentStep = action.payload
         },
         fillAccoutFormStep: (state: CheckoutFormState, action: { payload: AccountFormStep }) => {

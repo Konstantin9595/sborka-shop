@@ -34,8 +34,13 @@ export enum CheckoutStepStatus {
 }
 
 export type CheckoutFormState = {
-    checkoutFormCurrentStep: CheckoutStepStatus.ACCOUNT | CheckoutStepStatus.BILLING | CheckoutStepStatus.REVIEW | CheckoutStepStatus.SHIPPING
+    checkoutFormCurrentStep: CheckoutFormStepsLineProps['currentStep']
     checkoutFormAccountStep: AccountFormStep
     checkoutFormShippingStep: ShippingFormStep
     checkoutFormBillingStep: BillingFormStep
+}
+
+
+export type CheckoutFormStepsLineProps = {
+    currentStep: {id: number, name: CheckoutStepStatus.ACCOUNT | CheckoutStepStatus.BILLING | CheckoutStepStatus.REVIEW | CheckoutStepStatus.SHIPPING}
 }

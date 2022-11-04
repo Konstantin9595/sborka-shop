@@ -1,9 +1,10 @@
 import React, {FC} from 'react'
 import { CheckoutStepStatus } from "../../types"
 import CheckoutFormAccountStep from './CheckoutFormAccountStep'
-import CheckoutFormBillingPage from './CheckoutFormBillingPage'
-import CheckoutFormReviewPage from './CheckoutFormReviewPage'
-import CheckoutFormShippingPage from './CheckoutFormShippingPage'
+import CheckoutFormBillingStep from './CheckoutFormBillingStep'
+import CheckoutFormReviewStep from './CheckoutFormReviewStep'
+import CheckoutFormShippingStep from './CheckoutFormShippingStep'
+//import {UseFormRegister, RegisterOptions} from "react-hook-form"
 
 
 const CheckoutFormOnBaseStep:FC<{step: CheckoutStepStatus}> = React.memo(({step}) => {
@@ -13,11 +14,11 @@ const CheckoutFormOnBaseStep:FC<{step: CheckoutStepStatus}> = React.memo(({step}
             case CheckoutStepStatus.ACCOUNT:
                 return <CheckoutFormAccountStep />
             case CheckoutStepStatus.SHIPPING:
-                return <CheckoutFormShippingPage />
+                return <CheckoutFormShippingStep />
             case CheckoutStepStatus.BILLING:
-                return <CheckoutFormBillingPage />
+                return <CheckoutFormBillingStep />
             case CheckoutStepStatus.REVIEW:
-                return <CheckoutFormReviewPage />
+                return <CheckoutFormReviewStep />
         }
     }
 

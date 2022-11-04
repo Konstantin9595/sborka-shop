@@ -28,6 +28,7 @@
 }
 .header-menu__wrapper {
     .header-menu__list {
+
         .header-menu__item {
             display: flex;
             flex-direction: column;
@@ -75,13 +76,14 @@
     .header-menu__list {
         margin-left: 0;
         width: 100vw;
+        z-index: 1;
         transition: margin-left .3s;
     }
 
 
 }
 
-@media screen and (min-width: $tablet-max-width) {
+@media screen and (min-width: $tablet-width) {
     .header {
         display: flex;
 

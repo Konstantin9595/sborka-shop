@@ -1,38 +1,56 @@
 
 import { useState, FC, useCallback } from "react"
-import { CheckoutStepStatus } from "../types"
+import { CheckoutStepStatus, CheckoutFormStepsLineProps } from "../types"
 import { useDispatch, useSelector } from "react-redux"
 import CheckoutFormSwitchSteps from "./CheckoutForms/CheckoutFormSwitchSteps"
 import { selectStep, AppDispatch, RootState } from '../store'
 import { switchCurrentStep } from "../store/slices/checkoutFormSlice"
 import CheckoutFormOnBaseStep from "./CheckoutForms/CheckoutFormOnBaseStep"
+import { useForm, useFormState, FormProvider} from "react-hook-form"
+import CheckoutFormStepsLine from "./CheckoutForms/CheckoutFormStepsLine"
 // import CheckoutFormAccountStep from "./CheckoutForms/CheckoutFormAccountStep"
 // import CheckoutFormStepsLine from "./CheckoutForms/CheckoutFormStepsLine"
-
 
 const checkoutTransitions = {
     [CheckoutStepStatus.ACCOUNT]: {
         'prev': null,
-        'next': CheckoutStepStatus.SHIPPING
+        'next': {id: 1, name: CheckoutStepStatus.SHIPPING}
     },
     [CheckoutStepStatus.SHIPPING]: {
-        'prev': CheckoutStepStatus.ACCOUNT,
-        'next': CheckoutStepStatus.BILLING
+        'prev': {id: 0, name: CheckoutStepStatus.ACCOUNT},
+        'next': {id: 2, name: CheckoutStepStatus.BILLING}
     },
     [CheckoutStepStatus.BILLING]: {
-        'prev': CheckoutStepStatus.SHIPPING,
-        'next': CheckoutStepStatus.REVIEW
+        'prev': {id: 1, name: CheckoutStepStatus.SHIPPING},
+        'next': {id: 3, name: CheckoutStepStatus.REVIEW}
     },
     [CheckoutStepStatus.REVIEW]: {
-        'prev': CheckoutStepStatus.BILLING,
+        'prev': {id: 2, name: CheckoutStepStatus.BILLING},
         'next': null
     }
 }
 
 export const CheckoutFormContainer:FC = () => {
     const dispatch = useDispatch<AppDispatch>()
-    const step  = useSelector<RootState, CheckoutStepStatus>(selectStep)
-    const [counter, setCounter] = useState(0)
+    const step  = useSelector<RootState, CheckoutFormStepsLineProps['currentStep']>(selectStep)
+
+    const {register, ...formMethods} = useForm({
+        mode: 'all',
+        defaultValues: {
+            billingStep: {
+                paymentMethod: 'with-card',
+                cardNumber: {},
+                saveCardInfo: 'saveCardInfo',
+                termCond: ''
+            },
+        }
+
+    })
+    //const { errors } = useFormState({control})
+
+
+    // pass register method into child form components
+
     console.log('CheckoutFormContainer')
     // Steps
         // Account, Shipping, Billing, Review
@@ -52,7 +70,8 @@ export const CheckoutFormContainer:FC = () => {
     // <CheckoutFormStepsLine step={step}/>
     
     const nextStepHandler = useCallback(() => {
-        const nextStep = checkoutTransitions[step]['next']
+        const nextStep = checkoutTransitions[step.name]['next']
+        
         if(!nextStep) {
             return
         }
@@ -62,7 +81,7 @@ export const CheckoutFormContainer:FC = () => {
     }, [step, dispatch])
 
     const prevStepHandler = useCallback(() => {
-        const prevStep = checkoutTransitions[step]['prev']
+        const prevStep = checkoutTransitions[step.name]['prev']
 
         if(!prevStep) {
             return
@@ -75,13 +94,17 @@ export const CheckoutFormContainer:FC = () => {
 
     return (
         <div className="checkout-form">
-            <CheckoutFormOnBaseStep step={step} />
-            Current Step: {step}
+            <CheckoutFormStepsLine currentStep={step} />
+            <div className="checkout-step">
+                <h2 className='checkout-step__title'>Billing Information</h2>
+                <FormProvider register={register} {...formMethods}>
+                    <CheckoutFormOnBaseStep step={step.name} />
+                </FormProvider>
+            </div>
             <CheckoutFormSwitchSteps 
                 prevStepHandler={prevStepHandler} 
-                nextStepHandler={nextStepHandler}  
+                nextStepHandler={nextStepHandler}
             />
-            <button onClick={() => setCounter(counter + 1)}>Counter</button>
         </div>
     )
 
