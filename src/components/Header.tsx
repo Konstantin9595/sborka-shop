@@ -9,12 +9,12 @@ const menuItems: MenuItem[] = [
     {
         id: 1,
         label: "Women's",
-        href: "/womens"
+        href: "/catalog/womens"
     },
     {
         id: 2,
         label: "Men's",
-        href: "/mens"
+        href: "/catalog/mans"
     },
     {
         id: 3,
@@ -24,15 +24,15 @@ const menuItems: MenuItem[] = [
     {
         id: 4,
         label: "Travel",
-        href: "/travel"
+        href: "/catalog/travel"
     }, {
         id: 5,
         label: "Beauty",
-        href: "/beauty"
+        href: "/catalog/beauty"
     }, {
         id: 6,
         label: "Sale",
-        href: "/sale"
+        href: "/catalog/sale"
     }
 ]
 

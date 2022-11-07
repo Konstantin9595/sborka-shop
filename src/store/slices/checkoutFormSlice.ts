@@ -3,9 +3,9 @@ import { createSlice } from "@reduxjs/toolkit"
 
 import { 
     CheckoutFormState, 
-    AccountFormStep, 
-    BillingFormStep, 
-    ShippingFormStep,
+    // AccountFormStep, 
+    // BillingFormStep, 
+    // ShippingFormStep,
     CheckoutStepStatus
 } from "../../types"
 
@@ -24,23 +24,23 @@ const checkoutFormSlice = createSlice({
         switchCurrentStep: (state: CheckoutFormState, action: { payload: {id: number, name: CheckoutStepStatus} }) => {
             state.checkoutFormCurrentStep = action.payload
         },
-        fillAccoutFormStep: (state: CheckoutFormState, action: { payload: AccountFormStep }) => {
-            state.checkoutFormAccountStep = action.payload
-        },
-        fillBillingFormStep: (state: CheckoutFormState, action: { payload: BillingFormStep }) => {
-            state.checkoutFormBillingStep = action.payload
-        },
-        fillShippingFormStep: (state: CheckoutFormState, action: { payload: ShippingFormStep }) => {
-            state.checkoutFormShippingStep = action.payload
-        }
+        // fillAccoutFormStep: (state: CheckoutFormState, action: { payload: AccountFormStep }) => {
+        //     state.checkoutFormAccountStep = action.payload
+        // },
+        // fillBillingFormStep: (state: CheckoutFormState, action: { payload: BillingFormStep }) => {
+        //     state.checkoutFormBillingStep = action.payload
+        // },
+        // fillShippingFormStep: (state: CheckoutFormState, action: { payload: ShippingFormStep }) => {
+        //     state.checkoutFormShippingStep = action.payload
+        // }
     }
 })
 
 
 export const {
     switchCurrentStep, 
-    fillAccoutFormStep, 
-    fillBillingFormStep, fillShippingFormStep
+    // fillAccoutFormStep, 
+    // fillBillingFormStep, fillShippingFormStep
 } = checkoutFormSlice.actions
 
 export default checkoutFormSlice.reducer

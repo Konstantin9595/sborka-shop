@@ -1,11 +1,15 @@
 export type MenuItem = {
-    id: number,
-    label: string,
-    href: string,
+    id: number
+    label: string
+    href: string
 }
 
 export type MenuItems = {
     menuItems: MenuItem[]
+}
+
+export type CartIconProps = {
+    withBackground?: boolean
 }
 
 export type AccountFormStep = {
@@ -43,4 +47,29 @@ export type CheckoutFormState = {
 
 export type CheckoutFormStepsLineProps = {
     currentStep: {id: number, name: CheckoutStepStatus.ACCOUNT | CheckoutStepStatus.BILLING | CheckoutStepStatus.REVIEW | CheckoutStepStatus.SHIPPING}
+}
+
+export type ProductItem = {
+    title: string
+    price: number
+    image: {
+        url: string
+    }
+    sku: string
+    symbol: string
+    currency: string
+    gender: string,
+    category: string
+}
+
+export type Products = {
+    items: ProductItem[]
+}
+
+export type GrapqlProductsResponse = {
+    data: {
+        productCollection: {
+            items: ProductItem[]
+        }
+    }
 }

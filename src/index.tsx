@@ -5,55 +5,45 @@ import './styles/styles.scss'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Main from './layouts/Main'
 import Error from './pages/Error'
-import Womens from './pages/Womens'
-import Mens from './pages/Mens'
-import Travel from './pages/Travel'
-import Beauty from './pages/Beauty'
-import Sale from './pages/Sale'
 import Checkout from './pages/Checkout'
 import {store} from './store'
 import { Provider } from "react-redux"
+import Product from './components/Product'
+import Catalog from './pages/Catalog'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Main/>,
+    element: <Main />,
     children: [
       {
         path: '/',
-        element: <Checkout/>
+        element: <Checkout />
       },
       {
         path: '/home',
-        element: <Checkout/>
+        element: <Checkout />
       },
       {
-        path: '/womens',
-        element: <Womens/>
+        path: '/catalog',
+        element: <Catalog />,
+        children: [
+          {
+            path: '/catalog/:category',
+            element: <Catalog/>,
+          },
+        ]
       },
       {
-        path: '/mens',
-        element: <Mens />
-      },
-      {
-        path: '/travel',
-        element: <Travel />
-      },
-      {
-        path: '/beauty',
-        element: <Beauty />
-      },
-      {
-        path: '/sale',
-        element: <Sale />
+        path: '/product/:sku',
+        element: <Product />,
       },
       {
         path: '/*',
         element: <Error />
       }
     ]
-  },
-
+  }
 ])
 
 const root = ReactDOM.createRoot(

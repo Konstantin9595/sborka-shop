@@ -10,6 +10,11 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
 }
 
 ul {
@@ -20,3 +25,4 @@ ul {
         margin: 0;
     }
 }
+

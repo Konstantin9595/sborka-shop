@@ -1,0 +1,40 @@
+.product-catalog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &__item {
+        margin: 50px 70px;
+        max-width: 250px;
+        .product-item__top {
+            text-decoration: none;
+            display: inline-block;
+            color: black;
+            .product-item__image {
+                max-width: 228px;
+                height: auto;
+            }
+
+            .product-item__title {
+
+            }
+        }
+
+        .product-item__bottom {
+            display: flex;
+            align-items: center;
+            .product-item__cart {
+                cursor: pointer;
+            }
+            .product-item__price {
+                margin-left: 15px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $tablet-width) {
+    .product-catalog {
+        justify-content: start;
+    }
+}

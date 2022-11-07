@@ -1,0 +1,44 @@
+.product-card {
+    &__button {
+        button {
+            all: unset;
+            padding: 15px 30px;
+            cursor: pointer;
+            border: 1px solid $gray;
+            border-radius: 3px;
+        }
+        .back__button {
+            border: none;
+            color: $white;
+            background: $blue;
+        }
+    }
+
+    &__item {
+        .card-item__top {
+            .card-item__image {
+                max-width: 890px;
+                margin: 20px 0;
+            }
+
+
+            .card-item__sku {
+                
+            }
+        }
+
+        .card-item__buttom {
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+
+            .card-item__price {
+                margin-left: 15px;
+            }
+
+            .card-item__cart {
+                cursor: pointer;
+            }
+        }
+    }
+}
