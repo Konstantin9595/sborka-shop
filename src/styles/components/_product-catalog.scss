@@ -6,6 +6,8 @@
     &__item {
         margin: 50px 70px;
         max-width: 250px;
+        border: 1px solid $product-card-border;
+        padding: 11px;
         .product-item__top {
             text-decoration: none;
             display: inline-block;
