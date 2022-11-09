@@ -4,7 +4,8 @@
     justify-content: center;
 
     &__item {
-        margin: 50px 70px;
+        //margin: 50px 70px;
+        margin: 6.5%;
         max-width: 250px;
         border: 1px solid $product-card-border;
         padding: 11px;
@@ -15,10 +16,6 @@
             .product-item__image {
                 max-width: 228px;
                 height: auto;
-            }
-
-            .product-item__title {
-
             }
         }
 
@@ -36,6 +33,15 @@
 }
 
 @media screen and (min-width: $tablet-width) {
+    .product-catalog {
+        justify-content: start;
+        &__item {
+            margin: 3.5% 5%;
+        }
+    }
+}
+
+@media screen and (min-width: $desktop-width) {
     .product-catalog {
         justify-content: start;
     }

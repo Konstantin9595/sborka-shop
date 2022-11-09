@@ -1,0 +1,24 @@
+@import '../variables';
+
+.cart-icon {
+    position: relative;
+    // display: flex;
+    // justify-content: end;
+    .cart-icon__count {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        vertical-align: middle;
+        right: -5px;
+        top: -5px;
+        width: 13px;
+        height: 13px;
+        font-size: 10px;
+        text-align: center;
+        border-radius: 50px;
+        cursor: pointer;
+        color: $white;
+        background: $blue;
+    }
+}

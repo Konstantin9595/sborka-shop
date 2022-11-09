@@ -1,0 +1,157 @@
+@import "../variables";
+
+.content-cart {
+    position: fixed;
+    background: $white;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 0px;
+    overflow: auto;
+    z-index: 10;
+
+    .cart {
+        // .cart-top,
+        // .cart-bottom {
+        //     // max-width: 330px;
+        // }
+        .cart-clear {
+            text-align: right;
+            max-width: 330px;
+            margin: 20px auto;
+            cursor: pointer;
+
+            svg {
+                display: inline-block;
+            }
+        }
+        .cart-top {
+            max-width: 330px;
+            margin: 0 auto;
+            .cart-top__title {
+                font-size: 18px;
+            }
+
+            .cart-empty {
+                color: $color-input;
+                text-transform: uppercase;
+                margin-top: 80px;
+                text-align: center;
+                font-size: 1.5em;
+            }
+    
+            .cart-item {
+                margin: 40px 0;
+                display: flex;
+                align-items: end;
+                .cart-item__image {
+                    width: 90px;
+                    height: auto;
+                }
+                .cart-item__left {
+                    margin-right: 12px;
+                }
+    
+                .cart-item__right {
+                    width: 100%;
+                    position: relative;
+                    .cart-item__title {
+                        max-width: 200px;
+                    }
+                    .cart-item__controls {
+                        display: flex;
+                        max-width: 150px;
+                        justify-content: space-between;
+                        margin-top: 11px;
+                        align-items: center;
+
+                        .control-minus,
+                        .control-plus {
+                            cursor: pointer;
+                            max-width: 20px;
+                            max-height: 20px;
+                        }
+                        .control-minus {
+                            &::before {
+                                content: url("../../assets/images/minus-icon.svg");
+                            }
+                        }
+
+                        .control-plus {
+                            &::after {
+                                content: url("../../assets/images/plus-icon.svg");
+                            }
+                        }
+                    }
+
+                    .cart-item__remove {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .cart-bottom {
+            position: relative;
+            margin-top: 80px;
+            border-top: 1px solid $border-color;
+            
+            .summary {
+                margin: 40px auto;
+                max-width: 330px;
+                .summary-item {
+                    display: flex;
+                    justify-content: space-between;
+                    line-height: 34px;
+
+                    &:last-child {
+                        font-weight: 700;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.content-cart.slideIn {
+    height: 90vh;
+    transition: height 0.2s ease-in;
+}
+
+.content-cart.slideOut {
+    height: 0px;
+    transition: height 0.2s ease-out;
+}
+
+@media screen and (min-width: $desktop-width) {
+    .content-cart {
+        all: unset;
+        position: inherit;
+        background: $white;
+        border-left: 1px solid $border-color;
+        margin-top: 1px;
+
+        .cart {
+            min-width: 410px;
+            .cart-clear {
+                svg {
+                    all: unset;
+                }
+            }
+        }
+    }
+
+    .content-cart.slideIn {
+        height: 100vh;
+        margin-right: 0;
+    }
+    
+    .content-cart.slideOut {
+        height: 100vh;
+        margin-right: -100%;
+    }
+}

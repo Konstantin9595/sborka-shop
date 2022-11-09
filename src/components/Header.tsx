@@ -4,6 +4,7 @@ import Logo from './Logo'
 import SearchBar from './SearchBar'
 import CartIcon from './CartIcon'
 import {Link} from 'react-router-dom'
+import {SetStateAction, Dispatch} from 'react'
 
 const menuItems: MenuItem[] = [
     {
@@ -36,7 +37,7 @@ const menuItems: MenuItem[] = [
     }
 ]
 
-const Header = () => {
+const Header = ({setCartOpened}: any) => {
     return (
         <header className="header">
             <div className="header-logo">
@@ -50,7 +51,7 @@ const Header = () => {
             <div className="header-search">
                 <SearchBar />
             </div>
-            <div className="header-cart">
+            <div className="header-cart" onClick={() => setCartOpened((prev: boolean) => !prev)}>
                 <CartIcon />
             </div>
         </header>

@@ -12,6 +12,18 @@ export type CartIconProps = {
     withBackground?: boolean
 }
 
+export type CartContainerType = {
+    isOpened: boolean
+    setCartOpened: Function
+}
+
+export type CartSummaryType = {
+    subtotal: number
+    tax: number
+    shipping: number
+    total: number
+}
+
 export type AccountFormStep = {
     firstName: string
     lastName: string
@@ -65,6 +77,21 @@ export type ProductItem = {
 export type Products = {
     items: ProductItem[]
 }
+// title, sku, image, price, symbol
+export type CartItem = {
+    title: string
+    sku: string
+    image: {
+        url: string
+    }
+    price: number
+    symbol: string,
+    count: number
+}
+
+export type CartItems = {
+    items: CartItem[]
+}
 
 export type GrapqlProductsResponse = {
     data: {
@@ -73,3 +100,6 @@ export type GrapqlProductsResponse = {
         }
     }
 }
+// export type SkuList = {
+//     sku?: CartItem
+// }

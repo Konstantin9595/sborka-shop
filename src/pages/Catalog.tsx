@@ -1,4 +1,5 @@
 import {useEffect} from 'react'
+import { useDispatch } from 'react-redux'
 import { useParams } from "react-router-dom"
 import Error from "../components/Error"
 import Preloader from "../components/Preloader"
@@ -7,8 +8,8 @@ import { useGetProductsQuery } from "../store/api/product"
 
 const Catalog = () => {
     const {category} = useParams()
-    const {isError, isSuccess, isLoading, data: items} = useGetProductsQuery(category)
-    const entyties = items ? items : []
+    const {isError, isLoading, data: items} = useGetProductsQuery(category)
+    const entities = items ? items : []
     
 
     console.log('category: ', category)
@@ -16,7 +17,7 @@ const Catalog = () => {
         <div className="catalog-page">
             { isError ? <Error /> 
             : isLoading ? <Preloader /> 
-            : <ProductCatalog items={entyties} />
+            : <ProductCatalog items={entities} />
             }
         </div>
     )
