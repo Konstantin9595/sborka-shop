@@ -5,7 +5,6 @@ import CartContainer from '../components/CartContainer'
 
 const Main = () => {
     const [isCartOpened, setCartOpened] = useState(false)
-
     useEffect(() => {
         const width = window.innerWidth
         const onLoadHandler = () => {

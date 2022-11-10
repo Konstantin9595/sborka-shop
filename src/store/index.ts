@@ -2,6 +2,7 @@ import { configureStore, createSelector } from "@reduxjs/toolkit"
 import { useDispatch } from "react-redux"
 import checkoutFormSlice from "./slices/checkoutFormSlice"
 import cart from "./slices/cartSlice"
+import menu from './slices/menu'
 import { CartItem, CheckoutFormStepsLineProps } from '../types/index'
 import { productApi } from "./api/product"
 import { removeDoublesFromArrayOfObjects, repeatedItemsCount } from "../helpers"
@@ -10,6 +11,7 @@ export const store = configureStore({
     reducer: {
         checkoutFormSlice,
         cart,
+        menu,
         [productApi.reducerPath]: productApi.reducer
     },
     middleware: (gDM) => gDM().concat(productApi.middleware)

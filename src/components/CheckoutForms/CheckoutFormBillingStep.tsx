@@ -49,7 +49,7 @@ const CheckoutFormBillingStep = () => {
 
 function PayWithCardForm() { 
     
-    const {register, handleSubmit, formState, setFocus, setValue, getValues} = useFormContext()
+    const {register, setFocus, setValue} = useFormContext()
 
     //console.log('errors: ', formState?.errors)
 
@@ -61,7 +61,7 @@ function PayWithCardForm() {
         setFocus(nextStep)
     }
     
-    const changeField = (e: Event, id: any) => {
+    const changeField = (e: Event, id: string) => {
         const target = e.target as HTMLInputElement
         setValue(id, target.value.slice(0, 4))
     }

@@ -4,40 +4,12 @@ import Logo from './Logo'
 import SearchBar from './SearchBar'
 import CartIcon from './CartIcon'
 import {Link} from 'react-router-dom'
-import {SetStateAction, Dispatch} from 'react'
+import { useSelector } from "react-redux"
+import { RootState } from "../store"
 
-const menuItems: MenuItem[] = [
-    {
-        id: 1,
-        label: "Women's",
-        href: "/catalog/womens"
-    },
-    {
-        id: 2,
-        label: "Men's",
-        href: "/catalog/mans"
-    },
-    {
-        id: 3,
-        label: "Home",
-        href: "/home"
-    },
-    {
-        id: 4,
-        label: "Travel",
-        href: "/catalog/travel"
-    }, {
-        id: 5,
-        label: "Beauty",
-        href: "/catalog/beauty"
-    }, {
-        id: 6,
-        label: "Sale",
-        href: "/catalog/sale"
-    }
-]
+const Header = ({setCartOpened}: {setCartOpened: Function}) => {
+    const menuItems: MenuItem[] = useSelector((state: RootState) => state.menu)
 
-const Header = ({setCartOpened}: any) => {
     return (
         <header className="header">
             <div className="header-logo">
