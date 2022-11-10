@@ -36,7 +36,7 @@
             height: 57px;
             .header-menu__link {
                 color: $black;
-                padding: 20px 30px;
+                padding: 20px 25px;
                 text-decoration: none;
 
                 &:visited {
@@ -70,6 +70,7 @@
         height: 100vh;
         margin-left: -120px;
         top: 84px;
+        transition: margin-left .3s;
     }
 }
 
