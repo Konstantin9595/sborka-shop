@@ -1,6 +1,8 @@
+import { useDispatch } from "react-redux"
 import { useLocation, useNavigate, useNavigation, useParams } from "react-router-dom"
 import { useGetProductBySkuQuery } from "../store/api/product"
-import { ProductItem } from "../types"
+import { addToCart } from "../store/slices/cartSlice"
+import { CartItem, ProductItem } from "../types"
 import CartIcon from "./CartIcon"
 import Error from "./Error"
 import Preloader from "./Preloader"
@@ -8,10 +10,22 @@ import Preloader from "./Preloader"
 const Product = () => {
     const {sku} = useParams()
     const navigate = useNavigate()
-
+    const dispatch = useDispatch()
     const {isLoading, isError, data: item} = useGetProductBySkuQuery(sku)
 
     const product = item ? item : null
+
+    const addToCartHandler = (product: ProductItem) => {
+        const cartItem: CartItem = {
+            title: product.title,
+            sku: product.sku,
+            image: product.image,
+            price: product.price,
+            symbol: product.symbol,
+            count: 1
+        }
+        dispatch(addToCart(cartItem))
+    }
 
     const renderProductItem = (product: ProductItem) => {
         if(isError) {
@@ -33,7 +47,7 @@ const Product = () => {
                 </div>
             </div>
             <div className="card-item__buttom">
-                <div className="card-item__cart">
+                <div className="card-item__cart" onClick={() => addToCartHandler(product)}>
                     <CartIcon withBackground={true} />
                 </div>
                 <div className="card-item__price">
