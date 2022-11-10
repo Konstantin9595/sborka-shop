@@ -1,11 +1,14 @@
 .product-catalog {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
     justify-content: center;
+    flex-direction: column;
 
     &__item {
-        //margin: 50px 70px;
-        margin: 6.5%;
+        //margin-bottom: 50px;
+        //margin: 30px 60px;
+        margin: 0 35px 50px 35px;
         max-width: 250px;
         border: 1px solid $product-card-border;
         padding: 11px;
@@ -35,8 +38,10 @@
 @media screen and (min-width: $tablet-width) {
     .product-catalog {
         justify-content: start;
+        flex-direction: row;
         &__item {
-            margin: 3.5% 5%;
+            //margin: 3.5% 5%;
+            //margin-right: 5%;
         }
     }
 }

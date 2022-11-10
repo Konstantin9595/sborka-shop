@@ -120,6 +120,7 @@
 .content-cart.slideIn {
     height: 90vh;
     transition: height 0.2s ease-in;
+    margin-top: -60px;
 }
 
 .content-cart.slideOut {
@@ -130,7 +131,7 @@
 @media screen and (min-width: $desktop-width) {
     .content-cart {
         all: unset;
-        position: inherit;
+        //position: inherit;
         background: $white;
         border-left: 1px solid $border-color;
         margin-top: 1px;
@@ -146,12 +147,12 @@
     }
 
     .content-cart.slideIn {
-        height: 100vh;
+        height: auto;
         margin-right: 0;
     }
     
     .content-cart.slideOut {
-        height: 100vh;
+        height: auto;
         margin-right: -100%;
     }
 }
