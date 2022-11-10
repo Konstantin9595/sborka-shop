@@ -12,7 +12,7 @@ const Catalog = () => {
     const entities = items ? items : []
     
 
-    console.log('category: ', category)
+    //console.log('category: ', category)
     return (
         <div className="catalog-page">
             { isError ? <Error /> 

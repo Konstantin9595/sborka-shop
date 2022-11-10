@@ -38,7 +38,6 @@ export const productApi = createApi({
                 }))
             }),
             transformResponse: (response: GrapqlProductsResponse, meta): ProductItem[] => {
-                console.log('transformResponse: ', response, "meta: ", meta)
                 const items: ProductItem[] = response.data.productCollection.items
                 return items
             },

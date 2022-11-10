@@ -8,7 +8,7 @@ import CartIcon from './CartIcon'
 const ProductItem: FC<ProductItemType> = (product) => {
     const dispatch = useDispatch()
 
-    console.log('category: ', product.category)
+    //console.log('category: ', product.category)
 
     const addToCartHandler = (cartItem: CartItem) => {
         dispatch(addToCart(cartItem))

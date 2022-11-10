@@ -12,7 +12,7 @@ const steps = [
 
 
 const CheckoutFormStepsLine:FC<CheckoutFormStepsLineProps> = ({currentStep}) => {
-    console.log('CheckoutFormStepsLine')
+    //console.log('CheckoutFormStepsLine')
 
     const complitedSteps = steps.slice(0, currentStep.id)
 

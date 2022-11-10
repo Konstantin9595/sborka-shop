@@ -1,10 +1,9 @@
 @import '../variables';
 
 .header {
-    height: 80px;
     align-items: center;
     border-bottom: 1px solid $border-color;
-
+    padding: 25px;
     .header-logo {
         flex-grow: 1;
         margin-left: 16px;
@@ -34,6 +33,7 @@
             flex-direction: column;
             list-style: none;
             height: 57px;
+            position: relative;
             .header-menu__link {
                 color: $black;
                 padding: 20px 25px;
@@ -47,6 +47,18 @@
                     border-bottom: 1px solid $border-color;
                 }
             }
+
+            .header-menu__link.active {
+                &::after {
+                    content: "";
+                    border-bottom: 1px solid $blue;
+                    position: absolute;
+                    width: 100%;
+                    left: 0;
+                    bottom: 0;
+                }
+            }
+
         }
     }
 
@@ -88,7 +100,7 @@
 @media screen and (min-width: $tablet-width) {
     .header {
         display: flex;
-
+        padding: 10px;
         .header-logo {
              flex-grow: 1;
         }
@@ -111,11 +123,25 @@
             display: flex;
             flex-direction: row;
             .header-menu__item {
+                position: relative;
                 .header-menu__link {
                     &:hover {
                         border: none;
                     }
                 }
+
+                .header-menu__link.active {
+                    &::after {
+                        content: "";
+                        border-bottom: 1px solid $blue;
+                        width: 70%;
+                        position: absolute;
+                        bottom: 15%;
+                        left: 15%;
+                    }
+                }
+
+                
             }
         }
     }

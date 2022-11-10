@@ -9,7 +9,7 @@ import { cartSummaryCalculate } from '../helpers'
 
 const CartContainer:FC<CartContainerType> = memo(({isOpened, setCartOpened}) => {
     const cartItems = useSelector((state: RootState) => selectCartItemsWithCount(state))
-    console.log('CartContainer', cartItems)
+    //console.log('CartContainer', cartItems)
 
     const cartSummary: CartSummaryType = useMemo(() => {
         return cartSummaryCalculate(cartItems)

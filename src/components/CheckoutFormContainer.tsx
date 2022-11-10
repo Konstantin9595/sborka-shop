@@ -48,10 +48,7 @@ export const CheckoutFormContainer:FC = () => {
     })
     //const { errors } = useFormState({control})
 
-
-    // pass register method into child form components
-
-    console.log('CheckoutFormContainer')
+    //'CheckoutFormContainer')
     // Steps
         // Account, Shipping, Billing, Review
     // States

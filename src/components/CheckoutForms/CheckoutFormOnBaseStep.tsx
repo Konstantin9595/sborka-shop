@@ -8,7 +8,7 @@ import CheckoutFormShippingStep from './CheckoutFormShippingStep'
 
 
 const CheckoutFormOnBaseStep:FC<{step: CheckoutStepStatus}> = React.memo(({step}) => {
-    console.log('CheckoutFormOnBaseStep')
+    //console.log('CheckoutFormOnBaseStep')
     const switchRender = () => {
         switch(step) {
             case CheckoutStepStatus.ACCOUNT:

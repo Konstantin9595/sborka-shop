@@ -3,8 +3,10 @@
 .wrapper {
     display: flex;
     flex-direction: column;
-    overflow: hidden;
     position: relative;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .container {
@@ -15,6 +17,7 @@
 .content {
     display: flex;
     justify-content: space-between;
+    flex-grow: 1;
     .content-main {
         //max-width: 890px;
         width: 100%;
