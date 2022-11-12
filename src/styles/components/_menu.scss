@@ -7,6 +7,7 @@
     .header-logo {
         flex-grow: 1;
         margin-left: 16px;
+        width: 30%;
     }
 
     .header-menu {
@@ -21,6 +22,7 @@
         justify-content: flex-end;
         flex-grow: 1;
         min-width: 150px;
+        width: 30%;
     }
 
     .header-menu,
@@ -43,6 +45,7 @@
     }
 }
 .header-menu__wrapper {
+    margin: 0 auto;
     .header-menu__list {
 
         .header-menu__item {
@@ -53,7 +56,7 @@
             position: relative;
             .header-menu__link {
                 color: $black;
-                padding: 20px 2vw;
+                padding: 20px 1.3vw;
                 text-decoration: none;
 
                 &:visited {
