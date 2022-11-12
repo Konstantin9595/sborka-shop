@@ -1,15 +1,14 @@
-import {FC, memo, useCallback, useMemo} from 'react'
+import {FC, memo, useMemo} from 'react'
 import CartItem from "./CartItem"
 import { CartContainerType, CartItem as CartItemType, CartSummaryType} from "../types"
 import {ReactComponent as CartClear} from '../assets/images/ExitBold.svg'
-import { useDispatch, useSelector } from 'react-redux'
-import { RootState, selectCartItems, selectCartItemsWithCount } from '../store'
+import { useSelector } from 'react-redux'
+import { RootState, selectCartItemsWithCount } from '../store'
 import CartSummary from './CartSummary'
 import { cartSummaryCalculate } from '../helpers'
 
 const CartContainer:FC<CartContainerType> = memo(({isOpened, setCartOpened}) => {
     const cartItems = useSelector((state: RootState) => selectCartItemsWithCount(state))
-    //console.log('CartContainer', cartItems)
 
     const cartSummary: CartSummaryType = useMemo(() => {
         return cartSummaryCalculate(cartItems)

@@ -1,4 +1,4 @@
-import { SyntheticEvent, useEffect, useRef, useState } from 'react'
+import { SyntheticEvent, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useDebounce, useOnClickOutside } from 'usehooks-ts'
 import { ReactComponent as SearchIcon} from '../assets/images/SearchIcon.svg'

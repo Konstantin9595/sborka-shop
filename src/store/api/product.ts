@@ -1,7 +1,5 @@
-import { ThunkDispatch,  } from '@reduxjs/toolkit'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { arch } from 'os'
-import { GrapqlProductsResponse, ProductItem, Products } from '../../types'
+import { GrapqlProductsResponse, ProductItem } from '../../types'
 
 export const productApi = createApi({
     reducerPath: 'productApi',

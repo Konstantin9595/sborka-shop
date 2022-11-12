@@ -51,8 +51,6 @@ function PayWithCardForm() {
     
     const {register, setFocus, setValue} = useFormContext()
 
-    //console.log('errors: ', formState?.errors)
-
     const reFocus = async (value: string, nextStep: string) => {
         if(value.length !== 4) {
             return false

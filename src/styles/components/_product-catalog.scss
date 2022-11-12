@@ -37,7 +37,7 @@
 
 @media screen and (min-width: $tablet-width) {
     .product-catalog {
-        justify-content: start;
+        justify-content: flex-start;
         flex-direction: row;
         &__item {
             //margin: 3.5% 5%;
@@ -48,6 +48,6 @@
 
 @media screen and (min-width: $desktop-width) {
     .product-catalog {
-        justify-content: start;
+        justify-content: flex-start;
     }
 }

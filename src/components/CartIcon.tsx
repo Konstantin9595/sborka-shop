@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { useSelector } from 'react-redux'
 import { ReactComponent as CartIconSvg} from '../assets/images/CartIcon.svg'
 import { ReactComponent as CartIconWithBackgroundSvg} from '../assets/images/CartIconWithBackground.svg'
-import { RootState, selectCartItems } from '../store'
+import { selectCartItems } from '../store'
 
 import { CartIconProps } from '../types'
 

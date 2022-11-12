@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-// import './index.css';
 import './styles/styles.scss'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Main from './layouts/Main'
@@ -8,9 +7,9 @@ import Error from './pages/Error'
 import Checkout from './pages/Checkout'
 import {store, persistor} from './store'
 import { Provider } from "react-redux"
-import Product from './components/Product'
 import Catalog from './pages/Catalog'
 import { PersistGate } from 'redux-persist/integration/react'
+import Product from './pages/Product'
 
 const router = createBrowserRouter([
   {

@@ -4,11 +4,9 @@ import CheckoutFormAccountStep from './CheckoutFormAccountStep'
 import CheckoutFormBillingStep from './CheckoutFormBillingStep'
 import CheckoutFormReviewStep from './CheckoutFormReviewStep'
 import CheckoutFormShippingStep from './CheckoutFormShippingStep'
-//import {UseFormRegister, RegisterOptions} from "react-hook-form"
 
 
 const CheckoutFormOnBaseStep:FC<{step: CheckoutStepStatus}> = React.memo(({step}) => {
-    //console.log('CheckoutFormOnBaseStep')
     const switchRender = () => {
         switch(step) {
             case CheckoutStepStatus.ACCOUNT:

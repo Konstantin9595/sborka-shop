@@ -1,5 +1,4 @@
-import { ResultType } from "@remix-run/router/dist/utils"
-import { FC, memo } from "react"
+import { FC } from "react"
 import { CheckoutFormStepsLineProps, CheckoutStepStatus } from "../../types"
 
 const steps = [
@@ -9,10 +8,7 @@ const steps = [
     {id: 3, step: CheckoutStepStatus.REVIEW},
 ]
 
-
-
 const CheckoutFormStepsLine:FC<CheckoutFormStepsLineProps> = ({currentStep}) => {
-    //console.log('CheckoutFormStepsLine')
 
     const complitedSteps = steps.slice(0, currentStep.id)
 
@@ -21,8 +17,6 @@ const CheckoutFormStepsLine:FC<CheckoutFormStepsLineProps> = ({currentStep}) => 
     }
 
     const addClass = (step: string) => {
-
-        // console.log("complitedSteps: ", complitedSteps, "isComplited: ", isComplited(step), "step: ", step)
 
         if(step === currentStep.name) {
             return 'active-step'

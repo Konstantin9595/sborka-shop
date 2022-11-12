@@ -1,8 +1,8 @@
 
 import { ReactComponent as RemoveItem } from "../assets/images/ExitLight.svg"
-import {FC} from 'react'
+import { FC } from 'react'
 import { CartItem as CartItemType } from "../types"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { addToCart, removeItemBySku, removeItemsBySku } from "../store/slices/cartSlice"
 
 const CartItem:FC<CartItemType> = (cartItem) => {

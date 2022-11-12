@@ -1,4 +1,4 @@
-import {useState, useEffect, useLayoutEffect} from 'react'
+import {useState, useEffect} from 'react'
 import Header from '../components/Header'
 import { Outlet } from "react-router-dom"
 import CartContainer from '../components/CartContainer'

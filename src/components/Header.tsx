@@ -9,7 +9,7 @@ import { RootState } from "../store"
 
 const Header = ({setCartOpened}: {setCartOpened: Function}) => {
     const menuItems: MenuItem[] = useSelector((state: RootState) => state.menu)
-
+    
     return (
         <header className="header">
             <div className="header-logo">

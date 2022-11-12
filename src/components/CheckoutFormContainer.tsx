@@ -1,15 +1,13 @@
 
-import { useState, FC, useCallback } from "react"
+import { FC, useCallback } from "react"
 import { CheckoutStepStatus, CheckoutFormStepsLineProps } from "../types"
 import { useDispatch, useSelector } from "react-redux"
 import CheckoutFormSwitchSteps from "./CheckoutForms/CheckoutFormSwitchSteps"
 import { selectStep, AppDispatch, RootState } from '../store'
 import { switchCurrentStep } from "../store/slices/checkoutFormSlice"
 import CheckoutFormOnBaseStep from "./CheckoutForms/CheckoutFormOnBaseStep"
-import { useForm, useFormState, FormProvider} from "react-hook-form"
+import { useForm, FormProvider} from "react-hook-form"
 import CheckoutFormStepsLine from "./CheckoutForms/CheckoutFormStepsLine"
-// import CheckoutFormAccountStep from "./CheckoutForms/CheckoutFormAccountStep"
-// import CheckoutFormStepsLine from "./CheckoutForms/CheckoutFormStepsLine"
 
 const checkoutTransitions = {
     [CheckoutStepStatus.ACCOUNT]: {
@@ -46,26 +44,7 @@ export const CheckoutFormContainer:FC = () => {
         }
 
     })
-    //const { errors } = useFormState({control})
 
-    //'CheckoutFormContainer')
-    // Steps
-        // Account, Shipping, Billing, Review
-    // States
-        // ValidForm/InvalidForm
-            // Valid
-                // accepted term and cond
-                // correct inputs form data 
-            // Invalid    
-                // not accepted term and cond
-                // incorrect inputs form data
-
-    // localStoage.setItem('checkoutFormCurrentStep')
-    // localStoage.setItem('checkoutFormAccountStep')
-    // localStoage.setItem('checkoutFormShippingStep')
-    // localStoage.setItem('checkoutFormBillingStep')
-    // <CheckoutFormStepsLine step={step}/>
-    
     const nextStepHandler = useCallback(() => {
         const nextStep = checkoutTransitions[step.name]['next']
         

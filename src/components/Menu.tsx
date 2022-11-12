@@ -1,7 +1,7 @@
 
 import {MenuItem, MenuItems} from '../types'
 import {FC, useState, useEffect} from 'react'
-import { Link, NavLink, Location } from "react-router-dom"
+import { NavLink, Location } from "react-router-dom"
 import { ReactComponent as BurgerIcon} from '../assets/images/Burger.svg'
 import { ReactComponent as CloseIcon} from '../assets/images/ExitBold.svg'
 import { useLocation } from 'react-router-dom';
@@ -25,12 +25,15 @@ const DesktopMenu:FC<MenuItems & {location: Location}> = ({menuItems, location})
 const MobileMenu:FC<MenuItems & {location: Location}> = ({menuItems, location}) => {
     const [isActive, setActive] = useState<boolean>(() => false)
     const {pathname} = location
+
     useEffect(() => {
         if(isActive) {
             setActive(!isActive)
         }
-    },[])
 
+        // eslint-disable-next-line
+    }, [])
+    
     const handleButtonMenu = ():void => {
         setActive(!isActive)
     }
