@@ -69,8 +69,41 @@ export const productApi = createApi({
 
                 return item
             }
-        })
-    })
+        }),
+        searchProducts: builder.query<ProductItem[], unknown>({
+          query: ({title, limit}) => ({
+              url: '',
+              method: 'POST',
+              body: JSON.parse(JSON.stringify({
+                  query: `query searchProducts($limit: Int, $title: String) {
+                    productCollection(
+                      limit: $limit, 
+                      where: {title_contains: $title},
+                      order: price_ASC
+                    ) {
+                      items {
+                        title 
+                        image {
+                          url
+                        }
+                        sku,
+                        price
+                      }
+                    }
+                  }`,
+                  variables: {limit, title}
+              }))
+          }),
+          transformResponse: (response: GrapqlProductsResponse, meta): ProductItem[] => {
+              const items: ProductItem[] = response.data.productCollection.items
+              return items
+          },
+      }),
+    }),
+    
 })
 
-export const {useGetProductsQuery, useGetProductBySkuQuery} = productApi
+export const {useGetProductsQuery, useGetProductBySkuQuery, useSearchProductsQuery} = productApi
+
+
+// New Balance 5740 Think Colorfully

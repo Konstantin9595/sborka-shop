@@ -1,5 +1,5 @@
 @import '../variables';
-
+@import '../_mixins';
 
 .checkout-step {
     max-width: 548px;
@@ -64,11 +64,8 @@
                 display: flex;
                 flex-direction: row;
                 .billing-form__input {
-                    all: unset;
+                    @include input-text;
                     padding: 12px;
-                    background: $background-input;
-                    color: $color-input;
-                    border-radius: 3px;
                     display: inline-block;
                     width: 100%;
                 }

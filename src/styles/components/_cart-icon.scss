@@ -2,8 +2,6 @@
 
 .cart-icon {
     position: relative;
-    // display: flex;
-    // justify-content: end;
     .cart-icon__count {
         position: absolute;
         display: flex;
@@ -21,4 +19,5 @@
         color: $white;
         background: $blue;
     }
+
 }

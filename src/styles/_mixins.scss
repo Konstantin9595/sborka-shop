@@ -1,0 +1,6 @@
+@mixin input-text {
+    all: unset;
+    background: $background-input;
+    color: $color-input;
+    border-radius: 3px;
+}
