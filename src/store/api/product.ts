@@ -4,7 +4,7 @@ import { GrapqlProductsResponse, ProductItem } from '../../types'
 export const productApi = createApi({
     reducerPath: 'productApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'https://graphql.contentful.com/content/v1/spaces/atelzsru7rt9/environments/master', 
+        baseUrl: process.env.REACT_APP_API_URL, 
         prepareHeaders: (headers) => {
             headers.set('Authorization', `Bearer ${process.env.REACT_APP_API_TOKEN}`)
             return headers

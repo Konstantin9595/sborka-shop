@@ -6,8 +6,6 @@
     flex-direction: column;
 
     &__item {
-        //margin-bottom: 50px;
-        //margin: 30px 60px;
         margin: 0 35px 50px 35px;
         max-width: 250px;
         border: 1px solid $product-card-border;
@@ -19,6 +17,7 @@
             .product-item__image {
                 max-width: 228px;
                 height: auto;
+                min-height: 130px;
             }
         }
 
