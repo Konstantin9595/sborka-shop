@@ -1,4 +1,2 @@
 ## DEMO URL
-- 
-## DEMO EXAMPLE
-- 
+- https://sborka-shop.vercel.app/
